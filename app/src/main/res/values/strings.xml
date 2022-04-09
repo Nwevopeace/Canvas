@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Canvas</string>
+    <string name="content_description">A task on Canvas Drawing with 50 and 100 insets</string>
+
+</resources>
