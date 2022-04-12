@@ -12,7 +12,8 @@ import kotlin.math.abs
 class CanvaView(context: Context): View(context){
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap
-    private lateinit var frame: Rect
+    private lateinit var frame1: Rect
+    private lateinit var frame2: Rect
     private val STROKE_WIDTH = 15f
     private var motionTouchEventX = 0f
     private var motionTouchEventY = 0f
@@ -43,13 +44,15 @@ class CanvaView(context: Context): View(context){
 
         val insetX = 50
         val insetY = 100
-        frame = Rect(insetX, insetY, w - insetX, h - insetY)
+        frame1 = Rect(insetX, insetX, w - insetX, h - insetX)
+        frame2 = Rect(insetY, insetY, w - insetY, h - insetY)
     }
 
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         canvas?.drawBitmap(extraBitmap, 0f,0f, null)
-        canvas?.drawRect(frame, paint)
+        canvas?.drawRect(frame1, paint)
+        canvas?.drawRect(frame2, paint)
     }
 
     @SuppressLint("ClickableViewAccessibility")
